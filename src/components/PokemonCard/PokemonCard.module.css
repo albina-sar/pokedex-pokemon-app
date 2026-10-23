@@ -1,0 +1,27 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #333;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+}
+
+.card p {
+  text-transform: capitalize;
+  font-weight: 600;
+}
