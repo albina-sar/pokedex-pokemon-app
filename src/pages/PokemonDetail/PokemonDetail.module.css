@@ -43,3 +43,69 @@
   padding: 4px 0;
   border-bottom: 1px solid #f0f0f0;
 }
+
+/* --- Стили для типов (бейджи) --- */
+.types {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+  justify-content: center;
+}
+
+.typeBadge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: capitalize;
+  background-color: #68a090; /* Дефолтный цвет, если тип неизвестен */
+}
+
+/* Можно покрасить популярные типы */
+.typeBadge:nth-child(1) { background-color: #f08030; } /* fire */
+/* Но лучше сделать это через JS-словарь, если захочешь углубиться */
+
+/* --- Стили для статистики --- */
+.stats {
+  margin-top: 16px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.statRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #555;
+  text-transform: capitalize;
+}
+
+.statName {
+  width: 80px;
+  font-weight: 600;
+}
+
+.statBarContainer {
+  flex: 1;
+  height: 6px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  margin: 0 12px;
+  overflow: hidden;
+}
+
+.statBarFill {
+  height: 100%;
+  background-color: #4caf50; /* Зеленый цвет полоски */
+  border-radius: 4px;
+}
+
+.statValue {
+  width: 30px;
+  text-align: right;
+  font-weight: bold;
+}

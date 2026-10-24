@@ -34,8 +34,14 @@ function PokemonDetail() {
 
   return (
     <div className={styles.card}>
-      <h1 className={styles.title}>{pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}</h1>
-      <img src={pokemon.sprites.front_default} alt="pokemon" />
+      <h1 className={styles.title}>
+        {pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}
+      </h1>
+      <img
+        className={styles.icon}
+        src={pokemon.sprites.front_default}
+        alt="pokemon"
+      />
       <div className={styles.details}>
         <p>
           <span>Height</span>
@@ -45,15 +51,31 @@ function PokemonDetail() {
           <span>Weight</span>
           <span>{pokemon.weight}</span>
         </p>
-        <p><span>Experience</span><span>{pokemon.base_experience}</span></p>
-        <ul>
+        <p>
+          <span>Experience</span>
+          <span>{pokemon.base_experience}</span>
+        </p>
+        <div className={styles.types}>
           {pokemon.types.map((t) => (
-            <li key={t.type.name}>{t.type.name}</li>
+            <span key={t.type.name} className={styles.typeBadge}>
+              {t.type.name}
+            </span>
           ))}
-        </ul>
-        <ul>{pokemon.stats.map((s) => (
-          <li key={s.stat.name}>{s.stat.name}</li>
-        ))}</ul>
+        </div>
+        <div className={styles.stats}>
+          {pokemon.stats.map((s) => (
+            <div key={s.stat.name} className={styles.statRow}>
+              <span className={styles.statName}>{s.stat.name}</span>
+              <div className={styles.statBarContainer}>
+                <div
+                  className={styles.statBarFill}
+                  style={{ width: `${(s.base_stat / 150) * 100}%` }}
+                />
+              </div>
+              <span className={styles.statValue}>{s.base_stat}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
