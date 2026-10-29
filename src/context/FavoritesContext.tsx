@@ -20,4 +20,8 @@ function FavoritesContext() {
 }
 export default FavoritesContext;
 
+export function addToFavorites() {
+  
+}
+
 
