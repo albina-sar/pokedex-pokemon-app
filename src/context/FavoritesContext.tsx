@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import type { PokemonListItem } from "../Api/types";
 
 type FavoritesContextType = {
@@ -16,12 +16,5 @@ function FavoritesContext() {
   useEffect(() => {
     localStorage.setItem("favorites", JSON.stringify(favorites));
   }, [favorites]);
-
 }
 export default FavoritesContext;
-
-export function addToFavorites() {
-  
-}
-
-
